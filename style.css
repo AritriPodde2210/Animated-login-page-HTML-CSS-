@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  width: 100%;
+  overflow: hidden;
+}
+
+.wavy {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, #ff357a, #0b17b9);
+  animation: wavy 6s linear infinite;
+  z-index: -1;
+}
+
+@keyframes wavy {
+  0% {
+    transform: translateX(-50%) translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateX(-50%) translateY(-50%) rotate(360deg);
+  }
+}
+
+.login-container {
+  position: relative;
+  width: 320px;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.login-container:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, #ff357a, #0b17b9);
+  animation: wavy 8s linear infinite;
+  z-index: -1;
+  opacity: 0.5;
+  border-radius: 10px;
+}
+
+.login-container h2 {
+  font-size: 2.5em;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.login-container .inputBx {
+  position: relative;
+  width: 100%;
+}
+
+.login-container .inputBx input {
+  position: relative;
+  width: 100%;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #fff;
+  border-radius: 40px;
+  font-size: 1.2em;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  outline: none;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.login-container .inputBx input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #0078ff;
+}
+
+.login-container .inputBx input[type="submit"] {
+  width: 100%;
+  background: #0078ff;
+  background: linear-gradient(45deg, #ff357a, #0b17b9);
+  border: none;
+  cursor: pointer;
+  transition: 0.5s all ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  animation: pulsate 2s infinite;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.login-container .inputBx input[type="submit"]:hover {
+  background: linear-gradient(45deg, #0b17b9, #ff357a);
+  transform: scale(1.1);
+}
+
+.login-container .inputBx input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.login-container .links {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.login-container .links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.login-container .links a:hover {
+  color: #0078ff;
+}
